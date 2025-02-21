@@ -4,16 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:css": "postcss styles/*.css -d build/styles/",
-    "watch:css": "postcss styles/*.css -d build/styles/ --watch"
+    "build": "postcss *.css -d dist/",
+    "watch": "postcss *.css -d dist/ --watch"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.0.8",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.5.3",
-    "postcss-cli": "^11.0.0"
+    "postcss-cli": "^11.0.0",
+    "tailwindcss": "^4.0.8"
   }
 }

@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+body {
+  font-family: "Open Sans", sans-serif;
+  @apply bg-gray-50 dark:bg-gray-900 transition-colors duration-300;
+}
+
+h1,
+h2 {
+  font-family: "Poppins", sans-serif;
+}
+
+/* Custom Classes */
+.section-title {
+  @apply text-xl font-bold uppercase text-white bg-gradient-to-r from-sky-600 to-sky-800 p-3 mb-3 rounded shadow-lg hover:bg-sky-700 dark:from-sky-500 dark:to-sky-700 dark:hover:bg-sky-600 transition-all;
+}
+
+.date-text {
+  @apply text-sky-600 dark:text-sky-400;
+}
+
+.highlight-text {
+  @apply font-bold text-orange-500 hover:text-orange-600 dark:text-orange-400 dark:hover:text-orange-500 transition-all duration-200;
+}
+
+.summary-text {
+  @apply italic text-gray-600 dark:text-gray-400;
+}
+
+.bullet-list {
+  @apply list-disc list-inside text-black dark:text-gray-200 pl-4;
+}
+
+.name-first {
+  @apply font-bold uppercase text-orange-500 dark:text-orange-400;
+}
+
+.name-last {
+  @apply font-bold uppercase text-gray-800 dark:text-gray-200;
+}
+
+.title-text {
+  @apply font-bold text-black dark:text-white text-lg;
+}
+
+.contact-info {
+  @apply text-sm text-black dark:text-gray-200 flex items-center gap-2;
+}
+
+.contact-link {
+  @apply text-sky-600 underline hover:scale-105 dark:text-sky-400 transition-transform duration-200;
+}
+
+.separator {
+  @apply border-t-2 border-sky-600 dark:border-sky-500 my-6;
+}
+
+.skill-tag {
+  @apply inline-block bg-blue-100 text-sky-800 px-2 py-1 rounded-full m-1 hover:bg-blue-200 dark:bg-sky-800 dark:text-sky-200 dark:hover:bg-sky-700 transition-colors;
+}
+
+.card {
+  @apply bg-gray-100 p-4 rounded-lg shadow-md dark:bg-gray-800 transition-shadow;
+}
+
+.sidebar {
+  @apply sticky top-8 w-72;
+}
+
+.timeline {
+  @apply relative pl-8;
+}
+
+.timeline::before {
+  @apply absolute left-2 top-0 bottom-0 w-1 bg-sky-600 dark:bg-sky-500 content-[''];
+}
+
+.timeline-item::before {
+  @apply absolute left-1 text-orange-600 dark:text-orange-400 text-2xl content-['•'];
+}
+
+.achievement {
+  @apply text-sm font-semibold text-gray-800 dark:text-gray-200;
+}
+
+.theme-toggle {
+  @apply bg-orange-500 text-white px-3 py-1 rounded-full hover:bg-orange-600 dark:bg-sky-500 dark:hover:bg-sky-600 transition-colors;
+}
+.test-dark {
+  @apply bg-red-500 dark:bg-green-500;
+}
