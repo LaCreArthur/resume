@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="">
   <head>
     <meta charset="UTF-8" />
@@ -7,21 +7,38 @@
     <link href="dist/style.css" rel="stylesheet" />
     <script>
       if (
-        localStorage.theme === "dark" ||
-        (!("theme" in localStorage) &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches)
+        localStorage.theme === 'dark' ||
+        (!('theme' in localStorage) &&
+          window.matchMedia('(prefers-color-scheme: dark)').matches)
       ) {
-        document.DocumentElement.classList.add("dark");
+        document.documentElement.classList.add('dark');
       } else {
-        document.DocumentElement.classList.remove("dark");
+        document.documentElement.classList.remove('dark');
       }
     </script>
   </head>
-  <body class="max-w-5xl mx-auto p-8">
+  <body class="mx-auto max-w-5xl p-8">
     <!-- Header -->
-    <header
-      class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center mb-4 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 p-4 rounded-lg shadow-sm"
-    >
+    <nav class="navbar">
+      <!-- Left Side: Go back and PDF -->
+      <div class="flex items-center gap-4">
+        <a href="https://lacrearthur.github.io/home" class="nav-link"
+          >Go back</a
+        >
+        <button id="pdf-button" class="pdf-button">PDF</button>
+      </div>
+
+      <!-- Right Side: Toggle Switch -->
+      <div class="relative">
+        <input type="checkbox" id="theme-toggle" class="peer sr-only" />
+        <label for="theme-toggle" class="theme-toggle"> </label>
+        <span class="handle">
+          <span class="sun-icon">☀️</span>
+          <span class="moon-icon hidden peer-checked:block">🌙</span>
+        </span>
+      </div>
+    </nav>
+    <header class="header">
       <!-- Left Column: Name & Title -->
       <div>
         <h1 class="text-3xl">
@@ -47,12 +64,9 @@
           </a>
           <span>🌐</span>
         </p>
-        <button id="theme-toggle" class="theme-toggle mt-2 md:mt-0">
-          Toggle Dark Mode
-        </button>
       </div>
     </header>
-    <div class="test-dark w-20 h-20"></div>
+
     <!-- Summary -->
     <section class="mb-6">
       <p class="summary-text text-lg">
@@ -65,7 +79,7 @@
     </section>
 
     <!-- Two-Column Layout -->
-    <div class="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-6">
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-[auto_1fr]">
       <!-- Sidebar (Left Column) -->
       <div class="sidebar">
         <!-- Education -->
@@ -296,29 +310,42 @@
     </div>
 
     <!-- Footer -->
-    <footer class="text-center text-xs text-gray-600 mt-6">
+    <footer class="mt-6 text-center text-xs text-gray-600">
       <p>Updated: February 21, 2025</p>
     </footer>
     <script>
-      const toggleButton = document.getElementById("theme-toggle");
+      const toggleCheckbox = document.getElementById('theme-toggle');
       const htmlElement = document.documentElement;
 
-      toggleButton.addEventListener("click", () => {
-        if (htmlElement.classList.contains("dark")) {
-          htmlElement.classList.remove("dark");
-          localStorage.theme = "light";
-          toggleButton.textContent = "Dark Mode";
+      // Initialize based on localStorage or system preference
+      if (
+        localStorage.theme === 'dark' ||
+        (!('theme' in localStorage) &&
+          window.matchMedia('(prefers-color-scheme: dark)').matches)
+      ) {
+        htmlElement.classList.add('dark');
+        toggleCheckbox.checked = true;
+      } else {
+        htmlElement.classList.remove('dark');
+        toggleCheckbox.checked = false;
+      }
+
+      // Toggle on change
+      toggleCheckbox.addEventListener('change', () => {
+        if (toggleCheckbox.checked) {
+          htmlElement.classList.add('dark');
+          localStorage.theme = 'dark';
         } else {
-          htmlElement.classList.add("dark");
-          localStorage.theme = "dark";
-          toggleButton.textContent = "Light Mode";
+          htmlElement.classList.remove('dark');
+          localStorage.theme = 'light';
         }
       });
 
-      // Set initial button text
-      toggleButton.textContent = htmlElement.classList.contains("dark")
-        ? "Light Mode"
-        : "Dark Mode";
+      // PDF button functionality
+      const pdfButton = document.getElementById('pdf-button');
+      pdfButton.addEventListener('click', () => {
+        window.location.href = './cv.pdf'; // Adjust the path as needed
+      });
     </script>
   </body>
 </html>

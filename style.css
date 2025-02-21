@@ -1,20 +1,52 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 body {
-  font-family: "Open Sans", sans-serif;
-  @apply bg-gray-50 dark:bg-gray-900 transition-colors duration-300;
+  font-family: 'Open Sans', sans-serif;
+  @apply bg-gray-50 transition-colors duration-300 dark:bg-gray-900;
 }
 
 h1,
 h2 {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
+}
+
+.navbar {
+  @apply mx-auto flex max-w-5xl justify-between p-2;
+}
+
+.nav-link {
+  @apply text-sky-500 transition-colors duration-200 hover:text-sky-700 dark:text-sky-500 dark:hover:text-sky-300;
+}
+
+.pdf-button {
+  @apply relative block rounded-full bg-orange-500 px-3 py-0 text-white transition-colors duration-300 hover:bg-orange-600 dark:bg-sky-500 dark:hover:bg-sky-600;
+}
+
+.theme-toggle {
+  @apply relative block h-7 w-14 cursor-pointer rounded-full bg-gray-300 transition-colors duration-300 peer-checked:bg-sky-500;
+}
+
+.handle {
+  @apply pointer-events-none absolute top-1 left-1 flex h-5 w-5 items-center justify-center rounded-full bg-amber-200 text-sm transition-transform duration-300 peer-checked:translate-x-7 dark:bg-sky-800;
+}
+
+.sun-icon {
+  @apply block text-yellow-500 dark:hidden;
+}
+
+.moon-icon {
+  @apply hidden text-gray-200 peer-checked:block dark:block;
+}
+
+.header {
+  @apply mb-4 grid grid-cols-1 items-center gap-4 rounded-lg bg-gradient-to-b from-gray-100 to-gray-200 p-4 shadow-sm md:grid-cols-2 dark:from-gray-900 dark:to-gray-800;
 }
 
 /* Custom Classes */
 .section-title {
-  @apply text-xl font-bold uppercase text-white bg-gradient-to-r from-sky-600 to-sky-800 p-3 mb-3 rounded shadow-lg hover:bg-sky-700 dark:from-sky-500 dark:to-sky-700 dark:hover:bg-sky-600 transition-all;
+  @apply mb-3 rounded bg-gradient-to-r from-sky-600 to-sky-800 p-3 text-xl font-bold text-white uppercase shadow-lg transition-all hover:bg-sky-700 dark:from-sky-500 dark:to-sky-700 dark:hover:bg-sky-600;
 }
 
 .date-text {
@@ -22,47 +54,47 @@ h2 {
 }
 
 .highlight-text {
-  @apply font-bold text-orange-500 hover:text-orange-600 dark:text-orange-400 dark:hover:text-orange-500 transition-all duration-200;
+  @apply font-bold text-orange-500 transition-all duration-200 hover:text-orange-600 dark:text-orange-400 dark:hover:text-orange-500;
 }
 
 .summary-text {
-  @apply italic text-gray-600 dark:text-gray-400;
+  @apply text-gray-600 italic dark:text-gray-400;
 }
 
 .bullet-list {
-  @apply list-disc list-inside text-black dark:text-gray-200 pl-4;
+  @apply list-inside list-disc pl-4 text-black dark:text-gray-200;
 }
 
 .name-first {
-  @apply font-bold uppercase text-orange-500 dark:text-orange-400;
+  @apply font-bold text-orange-500 uppercase dark:text-orange-400;
 }
 
 .name-last {
-  @apply font-bold uppercase text-gray-800 dark:text-gray-200;
+  @apply font-bold text-gray-800 uppercase dark:text-gray-200;
 }
 
 .title-text {
-  @apply font-bold text-black dark:text-white text-lg;
+  @apply text-lg font-bold text-black dark:text-white;
 }
 
 .contact-info {
-  @apply text-sm text-black dark:text-gray-200 flex items-center gap-2;
+  @apply flex items-center gap-2 text-sm text-black dark:text-gray-200;
 }
 
 .contact-link {
-  @apply text-sky-600 underline hover:scale-105 dark:text-sky-400 transition-transform duration-200;
+  @apply text-sky-600 underline transition-transform duration-200 hover:scale-105 dark:text-sky-400;
 }
 
 .separator {
-  @apply border-t-2 border-sky-600 dark:border-sky-500 my-6;
+  @apply my-6 border-t-2 border-sky-600 dark:border-sky-500;
 }
 
 .skill-tag {
-  @apply inline-block bg-blue-100 text-sky-800 px-2 py-1 rounded-full m-1 hover:bg-blue-200 dark:bg-sky-800 dark:text-sky-200 dark:hover:bg-sky-700 transition-colors;
+  @apply m-1 inline-block rounded-full bg-blue-100 px-2 py-1 text-sky-800 transition-colors hover:bg-blue-200 dark:bg-sky-800 dark:text-sky-200 dark:hover:bg-sky-700;
 }
 
 .card {
-  @apply bg-gray-100 p-4 rounded-lg shadow-md dark:bg-gray-800 transition-shadow;
+  @apply rounded-lg bg-gray-100 p-4 shadow-md transition-shadow dark:bg-gray-800;
 }
 
 .sidebar {
@@ -74,20 +106,13 @@ h2 {
 }
 
 .timeline::before {
-  @apply absolute left-2 top-0 bottom-0 w-1 bg-sky-600 dark:bg-sky-500 content-[''];
+  @apply absolute top-0 bottom-0 left-2 w-1 bg-sky-600 content-[''] dark:bg-sky-500;
 }
 
 .timeline-item::before {
-  @apply absolute left-1 text-orange-600 dark:text-orange-400 text-2xl content-['•'];
+  @apply absolute left-1 text-2xl text-orange-600 content-['•'] dark:text-orange-400;
 }
 
 .achievement {
   @apply text-sm font-semibold text-gray-800 dark:text-gray-200;
-}
-
-.theme-toggle {
-  @apply bg-orange-500 text-white px-3 py-1 rounded-full hover:bg-orange-600 dark:bg-sky-500 dark:hover:bg-sky-600 transition-colors;
-}
-.test-dark {
-  @apply bg-red-500 dark:bg-green-500;
 }
