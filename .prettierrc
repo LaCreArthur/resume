@@ -8,5 +8,6 @@
   "jsxBracketSameLine": false,
   "htmlWhitespaceSensitivity": "css",
   "endOfLine": "lf",
-  "plugins": ["prettier-plugin-tailwindcss"]
+  "plugins": ["prettier-plugin-tailwindcss"],
+  "printWidth": 140
 }

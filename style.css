@@ -13,7 +13,7 @@ h2 {
 }
 
 .navbar {
-  @apply mx-auto flex max-w-5xl justify-between p-2;
+  @apply mb-2 flex justify-between rounded-lg bg-gray-100 p-2 dark:bg-gray-800;
 }
 
 .nav-link {
@@ -29,7 +29,7 @@ h2 {
 }
 
 .handle {
-  @apply pointer-events-none absolute top-1 left-1 flex h-5 w-5 items-center justify-center rounded-full bg-amber-200 text-sm transition-transform duration-300 peer-checked:translate-x-7 dark:bg-sky-800;
+  @apply pointer-events-none absolute top-1 left-1 flex h-5 w-5 items-center justify-center rounded-full bg-white text-sm transition-transform duration-300 peer-checked:translate-x-7 dark:bg-sky-800;
 }
 
 .sun-icon {
@@ -41,12 +41,26 @@ h2 {
 }
 
 .header {
-  @apply mb-4 grid grid-cols-1 items-center gap-4 rounded-lg bg-gradient-to-b from-gray-100 to-gray-200 p-4 shadow-sm md:grid-cols-2 dark:from-gray-900 dark:to-gray-800;
+  @apply mb-4 grid grid-cols-1 items-center gap-4 rounded-lg bg-gray-100 p-4 drop-shadow-lg md:grid-cols-2 dark:bg-gray-800;
 }
 
-/* Custom Classes */
+.name-first {
+  @apply font-bold text-orange-500 uppercase dark:text-orange-400;
+}
+
+.name-last {
+  @apply font-bold text-gray-800 uppercase dark:text-gray-200;
+}
+
 .section-title {
-  @apply mb-3 rounded bg-gradient-to-r from-sky-600 to-sky-800 p-3 text-xl font-bold text-white uppercase shadow-lg transition-all hover:bg-sky-700 dark:from-sky-500 dark:to-sky-700 dark:hover:bg-sky-600;
+  @apply relative mb-3 pb-2 text-xl font-bold text-sky-900 uppercase dark:text-sky-600;
+  &::after {
+    @apply absolute bottom-0 left-0 h-0.5 w-full bg-gradient-to-r from-sky-600 to-sky-800 shadow-md shadow-sky-700/50 content-[''] dark:from-sky-500 dark:to-sky-700;
+  }
+}
+
+.company-text {
+  @apply font-semibold text-gray-600 dark:text-gray-400;
 }
 
 .date-text {
@@ -63,14 +77,6 @@ h2 {
 
 .bullet-list {
   @apply list-inside list-disc pl-4 text-black dark:text-gray-200;
-}
-
-.name-first {
-  @apply font-bold text-orange-500 uppercase dark:text-orange-400;
-}
-
-.name-last {
-  @apply font-bold text-gray-800 uppercase dark:text-gray-200;
 }
 
 .title-text {
@@ -90,15 +96,36 @@ h2 {
 }
 
 .skill-tag {
-  @apply m-1 inline-block rounded-full bg-blue-100 px-2 py-1 text-sky-800 transition-colors hover:bg-blue-200 dark:bg-sky-800 dark:text-sky-200 dark:hover:bg-sky-700;
+  @apply relative m-1 inline-block items-center gap-1 rounded-full bg-blue-100 px-2 py-1 text-sky-800 transition-colors hover:bg-blue-200 dark:bg-sky-800 dark:text-sky-200 dark:hover:bg-sky-700;
+}
+
+.skill-level {
+  @apply text-xs text-sky-600 dark:text-sky-400;
+}
+
+.tooltip {
+  @apply absolute -top-8 left-1/2 z-10 hidden -translate-x-1/2 transform rounded bg-gray-800 p-1 text-xs whitespace-nowrap text-white group-hover:block;
+}
+
+.skill-category {
+  @apply mb-2 text-base font-semibold text-gray-700 dark:text-gray-300;
 }
 
 .card {
-  @apply rounded-lg bg-gray-100 p-4 shadow-md transition-shadow dark:bg-gray-800;
+  @apply rounded-lg bg-transparent p-4 shadow-md transition-shadow;
+}
+
+.content-container {
+  @apply rounded-lg bg-gray-100 p-4 dark:bg-gray-800;
 }
 
 .sidebar {
-  @apply sticky top-8 w-72;
+  @apply w-full md:top-8 md:w-72;
+}
+
+/* Optional: Adjust grid spacing */
+.grid {
+  @apply grid-cols-1 gap-6 md:grid-cols-[auto_1fr];
 }
 
 .timeline {
@@ -110,9 +137,34 @@ h2 {
 }
 
 .timeline-item::before {
-  @apply absolute left-1 text-2xl text-orange-600 content-['•'] dark:text-orange-400;
+  @apply absolute left-3 text-2xl text-orange-600 content-['*'] dark:text-orange-400;
 }
 
 .achievement {
   @apply text-sm font-semibold text-gray-800 dark:text-gray-200;
+}
+
+.other-item {
+  @apply flex items-start gap-2 text-gray-700 dark:text-gray-300;
+}
+
+.other-icon {
+  @apply flex-shrink-0 text-lg; /* Keeps emoji size consistent */
+}
+
+.language-list {
+  @apply space-y-1 pl-4; /* Indents languages slightly */
+}
+
+.language-item {
+  @apply flex gap-2;
+}
+
+.language-level {
+  @apply w-24 font-medium text-sky-600 dark:text-sky-400; /* Fixed width for alignment */
+}
+
+/* Adjust existing bullet-list if needed */
+.bullet-list {
+  @apply list-inside list-disc pl-4 text-black dark:text-gray-200;
 }

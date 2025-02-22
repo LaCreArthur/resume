@@ -6,11 +6,7 @@
     <title>Arthur Scheidel - CV</title>
     <link href="dist/style.css" rel="stylesheet" />
     <script>
-      if (
-        localStorage.theme === 'dark' ||
-        (!('theme' in localStorage) &&
-          window.matchMedia('(prefers-color-scheme: dark)').matches)
-      ) {
+      if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
         document.documentElement.classList.add('dark');
       } else {
         document.documentElement.classList.remove('dark');
@@ -22,9 +18,7 @@
     <nav class="navbar">
       <!-- Left Side: Go back and PDF -->
       <div class="flex items-center gap-4">
-        <a href="https://lacrearthur.github.io/home" class="nav-link"
-          >Go back</a
-        >
+        <a href="https://lacrearthur.github.io/home" class="nav-link">Go back</a>
         <button id="pdf-button" class="pdf-button">PDF</button>
       </div>
 
@@ -49,19 +43,11 @@
       </div>
       <!-- Right Column: Contact Infos -->
       <div class="flex flex-col gap-4 md:items-end">
+        <p class="contact-info w-full md:w-auto">Paris, France <span>📍</span></p>
+        <p class="contact-info w-full md:w-auto">arthur.scheidel@gmail.com <span>✉️</span></p>
+        <p class="contact-info w-full md:w-auto">+33617091755 <span>📞</span></p>
         <p class="contact-info w-full md:w-auto">
-          Paris, France <span>📍</span>
-        </p>
-        <p class="contact-info w-full md:w-auto">
-          arthur.scheidel@gmail.com <span>✉️</span>
-        </p>
-        <p class="contact-info w-full md:w-auto">
-          +33617091755 <span>📞</span>
-        </p>
-        <p class="contact-info w-full md:w-auto">
-          <a href="https://lacrearthur.github.io/home" class="contact-link">
-            lacrearthur.github.io
-          </a>
+          <a href="https://lacrearthur.github.io/home" class="contact-link"> lacrearthur.github.io </a>
           <span>🌐</span>
         </p>
       </div>
@@ -69,131 +55,183 @@
 
     <!-- Summary -->
     <section class="mb-6">
-      <p class="summary-text text-lg">
-        Seasoned Unity developer with a passion for innovation and new
-        technologies. Proven leader in fast-paced startups, delivering scalable
-        multiplayer systems and Web3 solutions. 20-year skateboarder with a
-        French Championship qualification, embodying resilience, discipline, and
-        growth mindset.
+      <p class="summary-text">
+        Seasoned Unity developer with a passion for innovation and new technologies. Proven leader in fast-paced startups, delivering
+        scalable multiplayer systems and Web3 solutions. 20-year skateboarder with a French Championship qualification, embodying
+        resilience, discipline, and growth mindset.
       </p>
     </section>
 
     <!-- Two-Column Layout -->
     <div class="grid grid-cols-1 gap-6 md:grid-cols-[auto_1fr]">
       <!-- Sidebar (Left Column) -->
-      <div class="sidebar">
-        <!-- Education -->
-        <section class="mb-6">
-          <h2 class="section-title">Education</h2>
-          <div class="space-y-4 text-sm">
-            <div>
-              <p class="date-text">2015 - 2017</p>
-              <p class="highlight-text">Master's Degree Software Engineering</p>
-              <p class="summary-text">University of Strasbourg, France</p>
-              <ul class="bullet-list">
-                <li>
-                  Graduated with honors, leading practical software projects.
-                </li>
-                <li>Mastered management and communication tools.</li>
-              </ul>
+      <div class="content-container">
+        <div class="sidebar">
+          <!-- Education -->
+          <section class="mb-6">
+            <h2 class="section-title">Education</h2>
+            <div class="space-y-4 text-sm">
+              <div>
+                <p class="date-text">2015 - 2017</p>
+                <p class="highlight-text">Master's Degree Software Engineering</p>
+                <p class="summary-text">University of Strasbourg, France</p>
+                <ul class="bullet-list">
+                  <li>Graduated with honors, leading practical software projects.</li>
+                  <li>Mastered management and communication tools.</li>
+                </ul>
+              </div>
+              <div>
+                <p class="date-text">2011 - 2015</p>
+                <p class="highlight-text">Computer Science Degree</p>
+                <p class="summary-text">University of Strasbourg, France</p>
+                <ul class="bullet-list">
+                  <li>Specialized in 3D geometry and networking.</li>
+                </ul>
+              </div>
             </div>
-            <div>
-              <p class="date-text">2011 - 2015</p>
-              <p class="highlight-text">Computer Science Degree</p>
-              <p class="summary-text">University of Strasbourg, France</p>
-              <ul class="bullet-list">
-                <li>Specialized in 3D geometry and networking.</li>
-              </ul>
+          </section>
+
+          <!-- Skills -->
+          <section class="mb-6">
+            <h2 class="section-title">Skills</h2>
+            <div class="space-y-4 text-sm">
+              <div>
+                <h3 class="skill-category">Programming Languages</h3>
+                <div>
+                  <span class="skill-tag group">
+                    C# <span class="skill-level">●●●●●</span>
+                    <span class="tooltip">8+ years</span>
+                  </span>
+                  <span class="skill-tag group">
+                    TS/JS <span class="skill-level">●●●●○</span>
+                    <span class="tooltip">5+ years</span>
+                  </span>
+                  <span class="skill-tag group">
+                    C++/Java <span class="skill-level">●●●○○</span>
+                    <span class="tooltip">3+ years</span>
+                  </span>
+                  <span class="skill-tag group">
+                    Python <span class="skill-level">●●○○○</span>
+                    <span class="tooltip">2+ years</span>
+                  </span>
+                </div>
+              </div>
+              <div>
+                <h3 class="skill-category">Game Development</h3>
+                <div>
+                  <span class="skill-tag group">
+                    Unity 3D <span class="skill-level">●●●●●</span>
+                    <span class="tooltip">8+ years</span>
+                  </span>
+                  <span class="skill-tag group">
+                    iOS/Android <span class="skill-level">●●●●○</span>
+                    <span class="tooltip">5+ years</span>
+                  </span>
+                  <span class="skill-tag group">
+                    Multiplayer <span class="skill-level">●●●○○</span>
+                    <span class="tooltip">3+ years</span>
+                  </span>
+                  <span class="skill-tag group">
+                    ECS/DOTS <span class="skill-level">●●○○○</span>
+                    <span class="tooltip">2+ years</span>
+                  </span>
+                </div>
+              </div>
+              <div>
+                <h3 class="skill-category">Fullstack & Web3</h3>
+                <div>
+                  <span class="skill-tag group">
+                    Firebase <span class="skill-level">●●●○○</span>
+                    <span class="tooltip">3+ years</span>
+                  </span>
+                  <span class="skill-tag group">
+                    React/Next <span class="skill-level">●●○○○</span>
+                    <span class="tooltip">2+ years</span>
+                  </span>
+                  <span class="skill-tag group">
+                    Blockchain <span class="skill-level">●●●○○</span>
+                    <span class="tooltip">3+ years</span>
+                  </span>
+                  <span class="skill-tag group">
+                    NFTs <span class="skill-level">●●●○○</span>
+                    <span class="tooltip">3+ years</span>
+                  </span>
+                </div>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        <!-- Skills -->
-        <section class="mb-6">
-          <h2 class="section-title">Skills</h2>
-          <div class="text-sm">
-            <span class="skill-tag">C#</span>
-            <span class="skill-tag">Unity 3D</span>
-            <span class="skill-tag">Blockchain</span>
-            <span class="skill-tag">WebGL</span>
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">Multiplayer Systems</span>
-            <span class="skill-tag">NFTs</span>
-            <span class="skill-tag">React</span>
-            <span class="skill-tag">Firebase</span>
-          </div>
-        </section>
-
-        <!-- Others -->
-        <section>
-          <h2 class="section-title">Others</h2>
-          <div class="text-sm">
-            <p class="bullet-list">
-              Fluent: French (Native), English | Intermediate: Spanish |
-              Notions: German
-            </p>
-            <p class="bullet-list">
-              20-year skateboarder; French Championship 2024 qualifier 🛹
-            </p>
-            <p class="bullet-list">Self-taught guitarist (8+ years)</p>
-          </div>
-        </section>
+          <!-- Others -->
+          <section class="mb-6">
+            <h2 class="section-title">Others</h2>
+            <div class="space-y-2 text-sm">
+              <!-- Languages -->
+              <div class="other-item">
+                <span class="other-icon">🗣️</span>
+                <div class="language-list">
+                  <p class="language-item"><span class="language-level">Fluent:</span> French, English</p>
+                  <p class="language-item"><span class="language-level">Intermediate:</span> Spanish</p>
+                  <p class="language-item"><span class="language-level">Notions:</span> German</p>
+                </div>
+              </div>
+              <!-- Other Items -->
+              <p class="other-item">
+                <span class="other-icon">🛹</span>
+                <span>20-year skateboarder; French Championship 2024 qualifier</span>
+              </p>
+              <p class="other-item">
+                <span class="other-icon">🌱</span>
+                <span>Growth mindset: Continuous learning via podcasts, audiobooks, and prototyping</span>
+              </p>
+              <p class="other-item">
+                <span class="other-icon">🎥</span>
+                <span>Content Creation: Youtube channel with Unity tutorials and Skateboarding vlogs</span>
+              </p>
+            </div>
+          </section>
+        </div>
       </div>
-
       <!-- Main Content (Right Column) -->
-      <div>
+      <div class="content-container">
         <!-- Achievements -->
         <section class="mb-6">
           <h2 class="section-title">Achievements</h2>
           <ul class="bullet-list">
-            <li class="achievement">
-              15K downloads for "Dogecoin To The Moon" (4.9 stars)
-            </li>
-            <li class="achievement">
-              Qualified for French Skateboarding Championship 2024
-            </li>
-            <li class="achievement">
-              Featured on Twitch by YouTuber Benzaie for Rody Game Series
-            </li>
+            <li class="achievement">15K downloads for "Dogecoin To The Moon" (4.9 stars)</li>
+            <li class="achievement">Qualified for French Skateboarding Championship 2024</li>
+            <li class="achievement">Featured on Twitch by YouTuber Benzaie for Rody Game Series</li>
           </ul>
         </section>
 
         <!-- Professional Experiences -->
-        <section class="timeline mb-6">
+        <section class="mb-6">
           <h2 class="section-title">Professional Experiences</h2>
-          <div class="space-y-6">
+          <div class="timeline space-y-6">
             <div class="card timeline-item">
-              <p>
-                <span class="date-text">Feb 2024 - Dec 2024</span> :
-                <span class="highlight-text"
-                  >Full-Stack Unity Developer @ Art Platform Startup</span
-                >
-              </p>
-              <p class="summary-text">
-                Pioneered WebGL-based virtual galleries for an art metaverse.
-              </p>
+              <div class="flex justify-between pb-1">
+                <p class="flex gap-2">
+                  <span class="highlight-text">Full-Stack Unity Developer</span>
+                  <span class="company-text">- YourArt</span>
+                </p>
+                <span class="date-text">Feb 2024 - Jun 2024</span>
+              </div>
+              <p class="summary-text">Pioneered WebGL-based virtual galleries for an art metaverse.</p>
               <ul class="bullet-list">
-                <li>
-                  Reduced Unity WebGL build sizes by 50% via asset optimization.
-                </li>
-                <li>
-                  Boosted scene loading times by 30-70% with texture
-                  enhancements.
-                </li>
+                <li>Reduced Unity WebGL build sizes by 50% via asset optimization.</li>
+                <li>Boosted scene loading times by 30-70% with texture enhancements.</li>
                 <li>Unified codebase with SOLID/DRY principles.</li>
-                <li>
-                  Enhanced Python backend APIs and JS/TS frontend features.
-                </li>
+                <li>Enhanced Python backend APIs and JS/TS frontend features.</li>
               </ul>
             </div>
             <div class="card timeline-item">
-              <p>
-                <span class="date-text">Apr 2023 - Sep 2023</span> :
-                <span class="highlight-text">Lead Unity Developer @ Yumon</span>
-              </p>
-              <p class="summary-text">
-                Led a 4-person team to build a Play-to-Earn mobile framework.
-              </p>
+              <div class="flex justify-between pb-1">
+                <p class="flex gap-2">
+                  <span class="highlight-text">Lead Unity Developer</span>
+                  <span class="company-text">- Yumon</span>
+                </p>
+                <span class="date-text">Apr 2023 - Sep 2023</span>
+              </div>
+              <p class="summary-text">Led a 4-person team to build a Play-to-Earn mobile framework.</p>
               <ul class="bullet-list">
                 <li>Developed multiplayer modes and NFT avatar systems.</li>
                 <li>Redesigned codebase into a reusable Unity Package.</li>
@@ -202,55 +240,46 @@
               </ul>
             </div>
             <div class="card timeline-item">
-              <p>
-                <span class="date-text">Mar 2022 - Apr 2023</span> :
-                <span class="highlight-text"
-                  >Chief Technology Officer @ CARFT</span
-                >
-              </p>
-              <p class="summary-text">
-                Spearheaded a blockchain-based car-collecting TGC.
-              </p>
+              <div class="flex justify-between pb-1">
+                <p class="flex gap-2">
+                  <span class="highlight-text">Chief Technology Officer</span>
+                  <span class="company-text">- CARFT</span>
+                </p>
+                <span class="date-text">Mar 2022 - Apr 2023</span>
+              </div>
+              <p class="summary-text">Spearheaded a blockchain-based car-collecting TGC.</p>
               <ul class="bullet-list">
-                <li>
-                  Built multiplayer and NFT workflows with car brand licenses.
-                </li>
-                <li>
-                  Established Unity and Web3 frameworks, mentoring juniors.
-                </li>
+                <li>Built multiplayer and NFT workflows with car brand licenses.</li>
+                <li>Established Unity and Web3 frameworks, mentoring juniors.</li>
                 <li>Delivered weekly PoCs across React and Firebase.</li>
                 <li>Drove project transparency with Notion workflows.</li>
               </ul>
             </div>
             <div class="card timeline-item">
-              <p>
-                <span class="date-text">Nov 2019 - Mar 2022</span> :
-                <span class="highlight-text"
-                  >Indie Game Developer @ Self-Employed</span
-                >
-              </p>
-              <p class="summary-text">
-                Crafted and launched hyper-casual and niche games.
-              </p>
+              <div class="flex justify-between pb-1">
+                <p class="flex gap-2">
+                  <span class="highlight-text">Indie Game Developer</span>
+                  <span class="company-text">- Bretzel Studio</span>
+                </p>
+                <span class="date-text">Nov 2019 - Mar 2022</span>
+              </div>
+              <p class="summary-text">Crafted and launched hyper-casual and niche games.</p>
               <ul class="bullet-list">
-                <li>
-                  Released "Dogecoin To The Moon": 15K downloads, 4.9 stars.
-                </li>
+                <li>Released "Dogecoin To The Moon": 15K downloads, 4.9 stars.</li>
                 <li>Partnered with Voodoo and Homa Games on prototypes.</li>
                 <li>Integrated NFTs into mobile games.</li>
                 <li>Enhanced AI for Spoon.ai bots (Oct-Dec 2021 freelance).</li>
               </ul>
             </div>
             <div class="card timeline-item">
-              <p>
-                <span class="date-text">Feb 2019 - Nov 2019</span> :
-                <span class="highlight-text"
-                  >Gameplay Programmer @ Ubisoft (Ketchapp)</span
-                >
-              </p>
-              <p class="summary-text">
-                Developed hyper-casual mobile games in a startup-like team.
-              </p>
+              <div class="flex justify-between pb-1">
+                <p class="flex gap-2">
+                  <span class="highlight-text">Gameplay Programmer</span>
+                  <span class="company-text">- Ubisoft (Ketchapp)</span>
+                </p>
+                <span class="date-text">Feb 2019 - Nov 2019</span>
+              </div>
+              <p class="summary-text">Developed hyper-casual mobile games in a startup-like team.</p>
               <ul class="bullet-list">
                 <li>Prototyped games in 3 days to 3 weeks.</li>
                 <li>Mastered SDKs, ad networks, and analytics.</li>
@@ -258,15 +287,14 @@
               </ul>
             </div>
             <div class="card timeline-item">
-              <p>
-                <span class="date-text">Apr 2018 - Jan 2019</span> :
-                <span class="highlight-text"
-                  >Game Developer @ Celsius Online</span
-                >
-              </p>
-              <p class="summary-text">
-                Enhanced live mobile games with 10M+ downloads.
-              </p>
+              <div class="flex justify-between pb-1">
+                <p class="flex gap-2">
+                  <span class="highlight-text">Game Developer</span>
+                  <span class="company-text">- Celsius Online</span>
+                </p>
+                <span class="date-text">Apr 2018 - Jan 2019</span>
+              </div>
+              <p class="summary-text">Enhanced live mobile games with 10M+ downloads.</p>
               <ul class="bullet-list">
                 <li>Debugged a 2000+ class codebase (C++, C#).</li>
                 <li>Fixed critical PvP cheats.</li>
@@ -277,17 +305,15 @@
         </section>
 
         <!-- Personal Projects -->
-        <section class="timeline">
+        <section class="mb-6">
           <h2 class="section-title">Personal Projects</h2>
-          <div class="space-y-6">
+          <div class="timeline space-y-6">
             <div class="card timeline-item">
               <p>
-                <span class="date-text">Feb 2024 - Present</span> :
+                <span class="date-text">Feb 2024 - Present</span>
                 <span class="highlight-text">Dogecoin To The Moon 2</span>
               </p>
-              <p class="summary-text">
-                Solo-developed a sequel to a hit crypto-themed game.
-              </p>
+              <p class="summary-text">Solo-developed a sequel to a hit crypto-themed game.</p>
               <ul class="bullet-list">
                 <li>Built new mechanics and UI for Q1 2025 release.</li>
                 <li>Leveraged Unity and Web3 for player ownership.</li>
@@ -295,7 +321,7 @@
             </div>
             <div class="card timeline-item">
               <p>
-                <span class="date-text">2015 - 2018</span> :
+                <span class="date-text">2015 - 2018</span>
                 <span class="highlight-text">Rody Game Series</span>
               </p>
               <p class="summary-text">Revived Atari-ST classics with Unity.</p>
@@ -318,11 +344,7 @@
       const htmlElement = document.documentElement;
 
       // Initialize based on localStorage or system preference
-      if (
-        localStorage.theme === 'dark' ||
-        (!('theme' in localStorage) &&
-          window.matchMedia('(prefers-color-scheme: dark)').matches)
-      ) {
+      if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
         htmlElement.classList.add('dark');
         toggleCheckbox.checked = true;
       } else {
