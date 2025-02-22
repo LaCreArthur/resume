@@ -2,6 +2,9 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* ========================================================================= */
+/* Base Styles */
+/* ========================================================================= */
 body {
   font-family: 'Open Sans', sans-serif;
   @apply bg-gray-50 transition-colors duration-300 dark:bg-gray-900;
@@ -12,8 +15,19 @@ h2 {
   font-family: 'Poppins', sans-serif;
 }
 
+/* ========================================================================= */
+/* Navbar */
+/* ========================================================================= */
+.handle {
+  @apply pointer-events-none absolute top-1 left-1 flex h-5 w-5 items-center justify-center rounded-full bg-white text-sm transition-transform duration-300 peer-checked:translate-x-7 dark:bg-sky-800;
+}
+
+.moon-icon {
+  @apply hidden text-gray-200 peer-checked:block dark:block;
+}
+
 .navbar {
-  @apply mb-2 flex justify-between rounded-lg bg-gray-100 p-2 dark:bg-gray-800;
+  @apply mx-auto mb-2 flex max-w-5xl justify-between rounded-lg bg-gray-100 p-2 dark:bg-gray-800;
 }
 
 .nav-link {
@@ -24,20 +38,23 @@ h2 {
   @apply relative block rounded-full bg-orange-500 px-3 py-0 text-white transition-colors duration-300 hover:bg-orange-600 dark:bg-sky-500 dark:hover:bg-sky-600;
 }
 
-.theme-toggle {
-  @apply relative block h-7 w-14 cursor-pointer rounded-full bg-gray-300 transition-colors duration-300 peer-checked:bg-sky-500;
-}
-
-.handle {
-  @apply pointer-events-none absolute top-1 left-1 flex h-5 w-5 items-center justify-center rounded-full bg-white text-sm transition-transform duration-300 peer-checked:translate-x-7 dark:bg-sky-800;
-}
-
 .sun-icon {
   @apply block text-yellow-500 dark:hidden;
 }
 
-.moon-icon {
-  @apply hidden text-gray-200 peer-checked:block dark:block;
+.theme-toggle {
+  @apply relative block h-7 w-14 cursor-pointer rounded-full bg-gray-300 transition-colors duration-300 peer-checked:bg-sky-500;
+}
+
+/* ========================================================================= */
+/* Header */
+/* ========================================================================= */
+.contact-info {
+  @apply flex items-center gap-2 text-sm text-black dark:text-gray-200;
+}
+
+.contact-link {
+  @apply text-sky-600 underline transition-transform duration-200 hover:scale-105 dark:text-sky-400;
 }
 
 .header {
@@ -52,6 +69,26 @@ h2 {
   @apply font-bold text-gray-800 uppercase dark:text-gray-200;
 }
 
+.title-text {
+  @apply text-lg font-bold text-black dark:text-white;
+}
+
+/* ========================================================================= */
+/* Content Containers */
+/* ========================================================================= */
+.content-container {
+  @apply rounded-lg bg-gray-100 p-4 dark:bg-gray-800;
+}
+
+.sidebar {
+  @apply w-full md:sticky md:top-8 md:w-72;
+}
+
+/* ========================================================================= */
+/* Section-Specific Styles */
+/* ========================================================================= */
+
+/* General Section Styles */
 .section-title {
   @apply relative mb-3 pb-2 text-xl font-bold text-sky-900 uppercase dark:text-sky-600;
   &::after {
@@ -59,6 +96,37 @@ h2 {
   }
 }
 
+/* Skills Section */
+.skill-category {
+  @apply mb-2 text-base font-semibold text-gray-700 dark:text-gray-300;
+}
+
+.skill-level {
+  @apply text-xs text-sky-600 dark:text-sky-400;
+}
+
+.skill-tag {
+  @apply relative m-1 flex inline-block items-center gap-1 rounded-full bg-blue-100 px-2 py-1 text-sky-800 transition-colors hover:bg-blue-200 dark:bg-sky-800 dark:text-sky-200 dark:hover:bg-sky-700;
+}
+
+/* Others Section */
+.language-item {
+  @apply flex gap-2;
+}
+
+.language-level {
+  @apply w-24 font-medium text-sky-600 dark:text-sky-400;
+}
+
+.other-icon {
+  @apply flex-shrink-0 text-lg;
+}
+
+.other-item {
+  @apply flex items-start gap-2 text-gray-700 dark:text-gray-300;
+}
+
+/* Timeline Section (Professional Experiences, Personal Projects) */
 .company-text {
   @apply font-semibold text-gray-600 dark:text-gray-400;
 }
@@ -75,59 +143,6 @@ h2 {
   @apply text-gray-600 italic dark:text-gray-400;
 }
 
-.bullet-list {
-  @apply list-inside list-disc pl-4 text-black dark:text-gray-200;
-}
-
-.title-text {
-  @apply text-lg font-bold text-black dark:text-white;
-}
-
-.contact-info {
-  @apply flex items-center gap-2 text-sm text-black dark:text-gray-200;
-}
-
-.contact-link {
-  @apply text-sky-600 underline transition-transform duration-200 hover:scale-105 dark:text-sky-400;
-}
-
-.separator {
-  @apply my-6 border-t-2 border-sky-600 dark:border-sky-500;
-}
-
-.skill-tag {
-  @apply relative m-1 inline-block items-center gap-1 rounded-full bg-blue-100 px-2 py-1 text-sky-800 transition-colors hover:bg-blue-200 dark:bg-sky-800 dark:text-sky-200 dark:hover:bg-sky-700;
-}
-
-.skill-level {
-  @apply text-xs text-sky-600 dark:text-sky-400;
-}
-
-.tooltip {
-  @apply absolute -top-8 left-1/2 z-10 hidden -translate-x-1/2 transform rounded bg-gray-800 p-1 text-xs whitespace-nowrap text-white group-hover:block;
-}
-
-.skill-category {
-  @apply mb-2 text-base font-semibold text-gray-700 dark:text-gray-300;
-}
-
-.card {
-  @apply rounded-lg bg-transparent p-4 shadow-md transition-shadow;
-}
-
-.content-container {
-  @apply rounded-lg bg-gray-100 p-4 dark:bg-gray-800;
-}
-
-.sidebar {
-  @apply w-full md:top-8 md:w-72;
-}
-
-/* Optional: Adjust grid spacing */
-.grid {
-  @apply grid-cols-1 gap-6 md:grid-cols-[auto_1fr];
-}
-
 .timeline {
   @apply relative pl-8;
 }
@@ -140,31 +155,26 @@ h2 {
   @apply absolute left-3 text-2xl text-orange-600 content-['*'] dark:text-orange-400;
 }
 
+/* Achievements Section */
 .achievement {
   @apply text-sm font-semibold text-gray-800 dark:text-gray-200;
 }
 
-.other-item {
-  @apply flex items-start gap-2 text-gray-700 dark:text-gray-300;
-}
-
-.other-icon {
-  @apply flex-shrink-0 text-lg; /* Keeps emoji size consistent */
-}
-
-.language-list {
-  @apply space-y-1 pl-4; /* Indents languages slightly */
-}
-
-.language-item {
-  @apply flex gap-2;
-}
-
-.language-level {
-  @apply w-24 font-medium text-sky-600 dark:text-sky-400; /* Fixed width for alignment */
-}
-
-/* Adjust existing bullet-list if needed */
+/* ========================================================================= */
+/* Utility Styles */
+/* ========================================================================= */
 .bullet-list {
   @apply list-inside list-disc pl-4 text-black dark:text-gray-200;
+}
+
+.card {
+  @apply rounded-lg bg-transparent p-4 shadow-md transition-shadow;
+}
+
+.separator {
+  @apply my-6 border-t-2 border-sky-600 dark:border-sky-500;
+}
+
+.tooltip {
+  @apply absolute -top-8 left-1/2 z-10 hidden -translate-x-1/2 transform rounded bg-gray-800 p-1 text-xs whitespace-nowrap text-white group-hover:block;
 }
