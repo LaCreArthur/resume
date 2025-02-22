@@ -106,7 +106,7 @@ h2 {
 }
 
 .skill-tag {
-  @apply relative m-1 flex inline-block items-center gap-1 rounded-full bg-blue-100 px-2 py-1 text-sky-800 transition-colors hover:bg-blue-200 dark:bg-sky-800 dark:text-sky-200 dark:hover:bg-sky-700;
+  @apply relative m-1 inline-block items-center gap-1 rounded-full bg-blue-100 px-2 py-1 text-sky-800 transition-colors hover:bg-blue-200 dark:bg-sky-800 dark:text-sky-200 dark:hover:bg-sky-700;
 }
 
 /* Others Section */
@@ -143,21 +143,34 @@ h2 {
   @apply text-gray-600 italic dark:text-gray-400;
 }
 
-.timeline {
-  @apply relative pl-8;
+.experience-timeline {
+  @apply relative;
 }
 
-.timeline::before {
-  @apply absolute top-0 bottom-0 left-2 w-1 bg-sky-600 content-[''] dark:bg-sky-500;
+.experience-item {
+  @apply relative border-l-2 border-sky-400 pl-6 dark:border-sky-600;
 }
 
-.timeline-item::before {
-  @apply absolute left-3 text-2xl text-orange-600 content-['*'] dark:text-orange-400;
+.experience-item::before {
+  @apply absolute top-6 left-[-4px] h-2 w-2 rounded-full bg-sky-400 content-[''] dark:bg-sky-600;
+}
+
+.experience-timeline::before {
+  @apply absolute top-2 bottom-2 w-0.5 border-dashed border-sky-400 bg-sky-400 content-[''] dark:border-sky-600 dark:bg-sky-600;
 }
 
 /* Achievements Section */
 .achievement {
   @apply text-sm font-semibold text-gray-800 dark:text-gray-200;
+}
+
+/* Project Section */
+.project-list {
+  @apply space-y-6;
+}
+
+.project-item {
+  @apply relative border-l-4 border-orange-400 dark:border-orange-500;
 }
 
 /* ========================================================================= */
