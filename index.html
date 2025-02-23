@@ -47,7 +47,7 @@
         <p class="contact-info w-full md:w-auto">arthur.scheidel@gmail.com <span>✉️</span></p>
         <p class="contact-info w-full md:w-auto">+33617091755 <span>📞</span></p>
         <p class="contact-info w-full md:w-auto">
-          <a href="https://lacrearthur.github.io/home" class="contact-link"> lacrearthur.github.io </a>
+          <a href="https://lacrearthur.github.io/home" class="contact-link"> lacrearthur.github.io/home </a>
           <span>🌐</span>
         </p>
       </div>
@@ -55,7 +55,7 @@
 
     <!-- Summary -->
     <section class="mb-6">
-      <p class="summary-text">
+      <p id="intro" class="summary-text pl-4">
         Seasoned Unity developer with a passion for innovation and new technologies. Proven leader in fast-paced startups, delivering
         scalable multiplayer systems and Web3 solutions. 20-year skateboarder with a French Championship qualification, embodying
         resilience, discipline, and growth mindset.
@@ -71,7 +71,7 @@
           <section class="mb-6">
             <h2 class="section-title">Education</h2>
             <div class="space-y-4 text-sm">
-              <div>
+              <div class="education-item">
                 <p class="highlight-text">Master's Degree Software Engineering</p>
                 <div class="flex justify-between">
                   <span class="summary-text">University of Strasbourg, France</span>
@@ -82,7 +82,7 @@
                   <li>Hands-on experience during two years of alternance (work-study)</li>
                 </ul>
               </div>
-              <div>
+              <div class="education-item">
                 <p class="highlight-text">Computer Science Degree</p>
                 <div class="flex justify-between">
                   <span class="summary-text">University of Strasbourg, France</span>
@@ -156,16 +156,16 @@
                     <span class="tooltip">3+ years</span>
                   </span>
                   <span class="skill-tag group">
-                    React/Next <span class="skill-level">●●○○○</span>
+                    React/Next <span class="skill-level">●●●○○</span>
+                    <span class="tooltip">3+ years</span>
+                  </span>
+                  <span class="skill-tag group">
+                    Blockchain <span class="skill-level">●●○○○</span>
                     <span class="tooltip">2+ years</span>
                   </span>
                   <span class="skill-tag group">
-                    Blockchain <span class="skill-level">●●●○○</span>
-                    <span class="tooltip">3+ years</span>
-                  </span>
-                  <span class="skill-tag group">
-                    NFTs <span class="skill-level">●●●○○</span>
-                    <span class="tooltip">3+ years</span>
+                    NFTs <span class="skill-level">●●○○○</span>
+                    <span class="tooltip">2+ years</span>
                   </span>
                 </div>
               </div>
@@ -181,14 +181,13 @@
                 <span class="other-icon">🗣️</span>
                 <div class="language-list">
                   <p class="language-item"><span class="language-level">Fluent:</span> French, English</p>
-                  <p class="language-item"><span class="language-level">Intermediate:</span> Spanish</p>
-                  <p class="language-item"><span class="language-level">Notions:</span> German</p>
+                  <p class="language-item"><span class="language-level">Notions:</span> German, Spanish</p>
                 </div>
               </div>
               <!-- Other Items -->
               <p class="other-item">
                 <span class="other-icon">🛹</span>
-                <span>20-year skateboarder; French Championship 2024 qualifier</span>
+                <span>20-year skateboarder; French Championship 2024 qualifier, athletic lifestyle</span>
               </p>
               <p class="other-item">
                 <span class="other-icon">🌱</span>
@@ -204,68 +203,29 @@
       </div>
       <!-- Main Content (Right Column) -->
       <div class="content-container">
-        <!-- Achievements -->
-        <section class="mb-6">
-          <h2 class="section-title">Achievements</h2>
-          <ul class="bullet-list">
-            <li class="achievement">15K downloads for "Dogecoin To The Moon" (4.9 stars)</li>
-            <li class="achievement">Qualified for French Skateboarding Championship 2024</li>
-            <li class="achievement">Featured on Twitch by YouTuber Benzaie for Rody Game Series</li>
-          </ul>
-        </section>
-
         <!-- Professional Experiences -->
         <section class="mb-6">
           <h2 class="section-title">Professional Experiences</h2>
-          <div class="experience-timeline space-y-6">
-            <div class="card experience-item">
+          <div class="experience-timeline space-y-6 text-sm">
+            <div class="experience-item">
               <div class="flex justify-between pb-1">
                 <p class="flex gap-2">
-                  <span class="highlight-text">Indie Game Developer & Skateboarding Athlete </span>
-                  <span class="company-text">- Bretzel Studio</span>
-                </p>
-                <span class="date-text">Nov 2019 - Preset</span>
-              </div>
-              <p class="summary-text">
-                Led independent game development studio, managing full product lifecycle from ideation to market launch while pursuing
-                technical and personal growth
-              </p>
-              <ul class="bullet-list">
-                <li>
-                  Launched "Dogecoin To The Moon" achieving 20K organic downloads, 4.9-star rating, and building engaged crypto community
-                  without marketing spend
-                </li>
-                <li>
-                  Qualified for the 2024 French National Skateboarding Championship through dedicated training, showcasing discipline,
-                  resilience, and a commitment to excellence.
-                </li>
-                <li>
-                  Teaching game programming at a private school (January 2025 - March 2025), designing a project-based Unity curriculum to
-                  empower students in creating their own games.
-                </li>
-                <li>
-                  Enhanced AI behaviors as a freelance developer for Spoon.ai (October 2021 - December 2021), integrating Goal-Oriented
-                  Action Planning into Unity-based bots.
-                </li>
-              </ul>
-            </div>
-            <div class="card experience-item">
-              <div class="flex justify-between pb-1">
-                <p class="flex gap-2">
-                  <span class="highlight-text">Full-Stack Unity Developer</span>
+                  <span class="highlight-text">Lead Unity & Full-Stack Developer</span>
                   <span class="company-text">- YourArt</span>
                 </p>
                 <span class="date-text">Feb 2024 - Jun 2024</span>
               </div>
-              <p class="summary-text">Pioneered WebGL-based virtual galleries for an art metaverse.</p>
+              <p class="summary-text">Unity WebGL virtual galleries and full-stack development for an art platform.</p>
               <ul class="bullet-list">
-                <li>Reduced Unity WebGL build sizes by 50% via asset optimization.</li>
-                <li>Boosted scene loading times by 30-70% with texture enhancements.</li>
-                <li>Unified codebase with SOLID/DRY principles.</li>
-                <li>Enhanced Python backend APIs and JS/TS frontend features.</li>
+                <li>Optimized Unity WebGL, cut build sizes by 50%, loading times by 70%.</li>
+                <li>Refactored codebase with SOLID/DRY, merging two projects for faster feature deployment.</li>
+                <li>
+                  Upgraded Python backend API (authentication, search, admin) and added JS/TS frontend features (navbar, artworks, user
+                  pages).
+                </li>
               </ul>
             </div>
-            <div class="card experience-item">
+            <div class="experience-item">
               <div class="flex justify-between pb-1">
                 <p class="flex gap-2">
                   <span class="highlight-text">Lead Unity Developer</span>
@@ -273,15 +233,14 @@
                 </p>
                 <span class="date-text">Apr 2023 - Sep 2023</span>
               </div>
-              <p class="summary-text">Led a 4-person team to build a Play-to-Earn mobile framework.</p>
+              <p class="summary-text">Led Unity development for a Play-to-Earn startup game with NFT avatars.</p>
               <ul class="bullet-list">
-                <li>Developed multiplayer modes and NFT avatar systems.</li>
-                <li>Redesigned codebase into a reusable Unity Package.</li>
-                <li>Launched a core gameplay feature in one week.</li>
-                <li>Improved mobile UX with Metamask integration.</li>
+                <li>Launched Play-To-Earn multiplayer game in 3 months with NFTs and leaderboards.</li>
+                <li>Created SDK with doc for third-party integration, enabling a new gameplay launch in one week.</li>
+                <li>Developed novel mobile web3 social login compliant with App Store guidelines.</li>
               </ul>
             </div>
-            <div class="card experience-item">
+            <div class="experience-item">
               <div class="flex justify-between pb-1">
                 <p class="flex gap-2">
                   <span class="highlight-text">Chief Technology Officer</span>
@@ -289,31 +248,22 @@
                 </p>
                 <span class="date-text">Mar 2022 - Apr 2023</span>
               </div>
-              <p class="summary-text">Spearheaded a blockchain-based car-collecting TGC.</p>
+              <p class="summary-text">
+                Built and led the tech for an NFT car collectibles game with multiplayer features, and real-world prize incentives.
+              </p>
               <ul class="bullet-list">
-                <li>Built multiplayer and NFT workflows with car brand licenses.</li>
-                <li>Established Unity and Web3 frameworks, mentoring juniors.</li>
-                <li>Delivered weekly PoCs across React and Firebase.</li>
-                <li>Drove project transparency with Notion workflows.</li>
+                <li>
+                  Rebuilt a Unity prototype into a robust system, mastering full stack, multiplayer and Web3 technologies from scratch.
+                </li>
+                <li>Established workflows and managed projects via Notion, mentoring 5 juniors in Unity.</li>
+                <li>Collaborated with CEO on strategy, roadmap, promoting at car and gaming events.</li>
+                <li>
+                  Developed tools for multiplayer, NFTs, and Smart Contracts; created Proof-of-Concepts in React, Angular, Firebase,
+                  Flutter, PlayFab, and Web3.
+                </li>
               </ul>
             </div>
-            <div class="card experience-item">
-              <div class="flex justify-between pb-1">
-                <p class="flex gap-2">
-                  <span class="highlight-text">Indie Game Developer</span>
-                  <span class="company-text">- Bretzel Studio</span>
-                </p>
-                <span class="date-text">Nov 2019 - Mar 2022</span>
-              </div>
-              <p class="summary-text">Crafted and launched hyper-casual and niche games.</p>
-              <ul class="bullet-list">
-                <li>Released "Dogecoin To The Moon": 15K downloads, 4.9 stars.</li>
-                <li>Partnered with Voodoo and Homa Games on prototypes.</li>
-                <li>Integrated NFTs into mobile games.</li>
-                <li>Enhanced AI for Spoon.ai bots (Oct-Dec 2021 freelance).</li>
-              </ul>
-            </div>
-            <div class="card experience-item">
+            <div class="experience-item">
               <div class="flex justify-between pb-1">
                 <p class="flex gap-2">
                   <span class="highlight-text">Gameplay Programmer</span>
@@ -321,14 +271,14 @@
                 </p>
                 <span class="date-text">Feb 2019 - Nov 2019</span>
               </div>
-              <p class="summary-text">Developed hyper-casual mobile games in a startup-like team.</p>
+              <p class="summary-text">Early member in Ubisoft's Ketchapp, built hyper-casual mobile games.</p>
               <ul class="bullet-list">
-                <li>Prototyped games in 3 days to 3 weeks.</li>
-                <li>Mastered SDKs, ad networks, and analytics.</li>
-                <li>Contributed to brainstorming and market analysis.</li>
+                <li>Shipped 15+ ultra-casual Unity prototypes in 1-2 weeks, testing KPIs with ad campaigns</li>
+                <li>Handled SDK integrations, ad networks, and analytics for soft launches and releases.</li>
+                <li>Wrote reusable code and adopted new Unity tools weekly, contributing to team brainstorming.</li>
               </ul>
             </div>
-            <div class="card experience-item">
+            <div class="experience-item">
               <div class="flex justify-between pb-1">
                 <p class="flex gap-2">
                   <span class="highlight-text">Game Developer</span>
@@ -338,38 +288,32 @@
               </div>
               <p class="summary-text">Enhanced live mobile games with 10M+ downloads.</p>
               <ul class="bullet-list">
-                <li>Debugged a 2000+ class codebase (C++, C#).</li>
-                <li>Fixed critical PvP cheats.</li>
-                <li>Updated iOS SDK for iPhone X.</li>
+                <li>Added features to Mutants: Genetic Gladiators in a large codebase (C++, ActionScript, C#).</li>
+                <li>Updated iOS SDK for iPhone X and fixed a critical PvP cheat bug in Primal Legends (NodeJS).</li>
               </ul>
             </div>
-          </div>
-        </section>
-
-        <!-- Personal Projects -->
-        <section class="mb-6">
-          <h2 class="section-title">Personal Projects</h2>
-          <div class="project-list space-y-6">
-            <div class="project-item card">
-              <p>
-                <span class="date-text">Feb 2024 - Present</span>
-                <span class="highlight-text">Dogecoin To The Moon 2</span>
-              </p>
-              <p class="summary-text">Solo-developed a sequel to a hit crypto-themed game.</p>
+            <div class="experience-item">
+              <div class="flex justify-between pb-1">
+                <p class="flex gap-2">
+                  <span class="highlight-text">Independent Game Developer</span>
+                  <span class="company-text">- Bretzel Studio</span>
+                </p>
+                <span class="date-text">Nov 2019 - Present</span>
+              </div>
+              <p class="summary-text">Runs indie game studio with 20+ published titles, content creation & contract work.</p>
               <ul class="bullet-list">
-                <li>Built new mechanics and UI for Q1 2025 release.</li>
-                <li>Leveraged Unity and Web3 for player ownership.</li>
-              </ul>
-            </div>
-            <div class="project-item card">
-              <p>
-                <span class="date-text">2015 - 2018</span>
-                <span class="highlight-text">Rody Game Series</span>
-              </p>
-              <p class="summary-text">Revived Atari-ST classics with Unity.</p>
-              <ul class="bullet-list">
-                <li>Collaborated with YouTuber Benzaie for Twitch release.</li>
-                <li>Added a level editor and dynamic asset loading.</li>
+                <li>Teach project-based Unity curriculum at Futurae Private School (Jan-Mar 2025)</li>
+                <li>Launched Dogecoin To The Moon (2021), 20K downloads, 4.9 stars organically.</li>
+                <li>Qualified for 2024 French Skateboarding Championship, building resilience and discipline.</li>
+                <li>Enhanced AI for Spoon.ai (2021), prototyped Goal-Oriented Action Planning.</li>
+                <li>
+                  Prototyped hyper-casual games with Voodoo and Homa Games (2019-2022), iterating with new tools for skill growth (DOTS,
+                  Web3).
+                </li>
+                <li>
+                  Created Rody Collection (2015-2018), a Unity remake of Atari ST's Rody & Mastico, featured by YouTuber Benzaie on
+                  Twitch/YouTube with 800K+ views
+                </li>
               </ul>
             </div>
           </div>
@@ -378,7 +322,7 @@
     </div>
 
     <!-- Footer -->
-    <footer class="mt-6 text-center text-xs text-gray-600">
+    <footer id="footer" class="mt-6 text-center text-xs text-gray-600">
       <p>Updated: February 21, 2025</p>
     </footer>
     <script>
@@ -408,7 +352,7 @@
       // PDF button functionality
       const pdfButton = document.getElementById('pdf-button');
       pdfButton.addEventListener('click', () => {
-        window.location.href = './cv.pdf'; // Adjust the path as needed
+        window.print();
       });
     </script>
   </body>

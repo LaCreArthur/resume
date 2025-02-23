@@ -6,13 +6,13 @@
 /* Base Styles */
 /* ========================================================================= */
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: Calibri, sans-serif;
   @apply bg-gray-50 transition-colors duration-300 dark:bg-gray-900;
 }
 
 h1,
 h2 {
-  font-family: 'Poppins', sans-serif;
+  font-family: Calibri, sans-serif;
 }
 
 /* ========================================================================= */
@@ -50,27 +50,54 @@ h2 {
 /* Header */
 /* ========================================================================= */
 .contact-info {
-  @apply flex items-center gap-2 text-sm text-black dark:text-gray-200;
+  @apply m-[-0.5rem] flex items-center gap-2 text-sm text-black dark:text-gray-200;
 }
 
 .contact-link {
-  @apply text-sky-600 underline transition-transform duration-200 hover:scale-105 dark:text-sky-400;
+  @apply text-sky-600 transition-transform duration-200 hover:underline-offset-0 dark:text-sky-400;
+  position: relative;
+}
+
+.contact-link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.contact-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 .header {
-  @apply mb-4 grid grid-cols-1 items-center gap-4 rounded-lg bg-gray-100 p-4 drop-shadow-lg md:grid-cols-2 dark:bg-gray-800;
+  @apply relative mb-4 grid grid-cols-1 items-center gap-4 p-4 md:grid-cols-2;
+}
+
+.header::after {
+  @apply absolute right-4 bottom-[-4px] left-4 h-0.75 bg-gradient-to-r from-sky-600 to-sky-800 shadow-md shadow-sky-700/50 content-[''] dark:from-sky-500 dark:to-sky-700;
 }
 
 .name-first {
-  @apply font-bold text-orange-500 uppercase dark:text-orange-400;
+  @apply font-bold tracking-wider text-orange-500 uppercase drop-shadow-md dark:text-orange-400;
 }
 
 .name-last {
-  @apply font-bold text-gray-800 uppercase dark:text-gray-200;
+  @apply font-bold tracking-wider text-gray-500 uppercase drop-shadow-md dark:text-gray-400;
 }
 
 .title-text {
-  @apply text-lg font-bold text-black dark:text-white;
+  @apply text-lg font-bold text-gray-700 drop-shadow-md dark:text-gray-200;
+}
+
+.summary-text {
+  @apply pr-4 pb-2 text-sm text-gray-600 italic dark:text-gray-400;
 }
 
 /* ========================================================================= */
@@ -126,7 +153,7 @@ h2 {
   @apply flex items-start gap-2 text-gray-700 dark:text-gray-300;
 }
 
-/* Timeline Section (Professional Experiences, Personal Projects) */
+/* Timeline Section (Professional Experiences) */
 .company-text {
   @apply font-semibold text-gray-600 dark:text-gray-400;
 }
@@ -136,11 +163,7 @@ h2 {
 }
 
 .highlight-text {
-  @apply font-bold text-orange-500 transition-all duration-200 hover:text-orange-600 dark:text-orange-400 dark:hover:text-orange-500;
-}
-
-.summary-text {
-  @apply text-gray-600 italic dark:text-gray-400;
+  @apply font-bold text-orange-600 transition-all duration-200 hover:text-orange-800 dark:text-orange-400 dark:hover:text-orange-600;
 }
 
 .experience-timeline {
@@ -148,40 +171,22 @@ h2 {
 }
 
 .experience-item {
-  @apply relative border-l-2 border-sky-400 pl-6 dark:border-sky-600;
+  @apply relative pl-6;
 }
 
 .experience-item::before {
-  @apply absolute top-6 left-[-4px] h-2 w-2 rounded-full bg-sky-400 content-[''] dark:bg-sky-600;
+  @apply absolute top-2 left-[-3px] h-2 w-2 rounded-full bg-sky-400 content-[''] dark:bg-sky-600;
 }
 
 .experience-timeline::before {
   @apply absolute top-2 bottom-2 w-0.5 border-dashed border-sky-400 bg-sky-400 content-[''] dark:border-sky-600 dark:bg-sky-600;
 }
 
-/* Achievements Section */
-.achievement {
-  @apply text-sm font-semibold text-gray-800 dark:text-gray-200;
-}
-
-/* Project Section */
-.project-list {
-  @apply space-y-6;
-}
-
-.project-item {
-  @apply relative border-l-4 border-orange-400 dark:border-orange-500;
-}
-
 /* ========================================================================= */
 /* Utility Styles */
 /* ========================================================================= */
 .bullet-list {
-  @apply list-inside list-disc pl-4 text-black dark:text-gray-200;
-}
-
-.card {
-  @apply rounded-lg bg-transparent p-4 shadow-md transition-shadow;
+  @apply list-inside list-disc pl-5 indent-[-20px] text-black dark:text-gray-200;
 }
 
 .separator {
@@ -190,4 +195,176 @@ h2 {
 
 .tooltip {
   @apply absolute -top-8 left-1/2 z-10 hidden -translate-x-1/2 transform rounded bg-gray-800 p-1 text-xs whitespace-nowrap text-white group-hover:block;
+}
+
+/* Print Styles */
+@media print {
+  /* Use full A4 dimensions, no scaling */
+  body {
+    margin: -1rem;
+    background: #f9fafb; /* bg-gray-50 */
+    font-size: 8pt; /* Reduced for compactness */
+  }
+
+  /* Preserve two-column layout, expand to full width */
+  .grid-cols-1.md\:grid-cols-\[auto_1fr\] {
+    display: grid;
+    grid-template-columns: 65mm 1fr; /* Narrow sidebar, flexible main */
+    gap: 5mm; /* Reduced gap for compactness */
+  }
+
+  .sidebar {
+    width: 60mm;
+  }
+
+  /* Header mimics screen */
+  .header {
+    display: grid;
+    grid-template-columns: 5fr 5fr;
+    padding-left: 1rem; /* Scaled down slightly */
+    padding-right: 1rem; /* Scaled down slightly */
+    background: #fffff; /* bg-gray-100 */
+    margin-top: -1rem;
+  }
+
+  .header::after {
+    height: 1px;
+    background: linear-gradient(to right, #0284c7, #075985);
+  }
+
+  /* Content containers */
+  .content-container {
+    padding: 0.6rem;
+    background: #f3f4f6;
+    border-radius: 0.5rem;
+    padding-bottom: 0rem;
+  }
+
+  /* Hide navbar */
+  .navbar {
+    display: none;
+  }
+
+  /* Retain original styles */
+  .name-first {
+    color: #f97316;
+    font-size: 17pt;
+  }
+  .name-last {
+    color: #1f2937;
+    font-size: 17pt;
+  }
+  .title-text {
+    color: #000;
+    font-size: 11pt;
+    margin-bottom: -0.5rem;
+  }
+  .contact-info {
+    color: #000;
+    font-size: 8pt;
+  }
+  .section-title {
+    color: #0c4a6e;
+    font-size: 14pt;
+    margin-top: -0.5rem;
+    padding-bottom: 0rem;
+  }
+
+  .section-title::after {
+    height: 1px;
+    background: linear-gradient(to right, #0284c7, #075985);
+  }
+  .highlight-text {
+    color: #f97316;
+    font-size: 10pt;
+    padding-top: 0.5rem;
+  }
+
+  .company-text {
+    font-size: 10pt;
+    padding-top: 0.6rem;
+  }
+
+  .experience-item .date-text {
+    font-size: 10pt;
+    padding-top: 0.6rem;
+  }
+
+  .education-item .date-text {
+    font-size: 9pt;
+  }
+
+  .summary-text {
+    color: #4b5563;
+    font-size: 9pt;
+  }
+
+  .date-text {
+    color: #0284c7;
+  }
+
+  .skill-category {
+    font-size: 10pt;
+  }
+
+  .skill-tag {
+    background: #dbeafe;
+    color: #1e40af;
+    font-size: 8pt;
+  }
+  .skill-level {
+    color: #0284c7;
+    font-size: 8pt;
+  }
+
+  /* Non-card timeline, align dates */
+  .experience-item {
+    border-left: 2px solid #0284c7;
+    padding-left: 1rem;
+    margin-bottom: 0rem;
+    background: none;
+    box-shadow: none;
+  }
+  .experience-item::before {
+    display: block;
+    //top: 1rem;
+    left: -4px;
+    width: 6px;
+    height: 6px;
+    background: #60a5fa;
+  }
+  .experience-timeline::before {
+    display: none;
+  }
+
+  /* Fix Education date alignment */
+  .sidebar .flex.justify-between .date-text {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /* Avoid breaks */
+  .experience-item,
+  .bullet-list {
+    page-break-inside: avoid;
+    font-size: 8pt;
+  }
+
+  .other-item {
+    font-size: 8pt;
+  }
+
+  #footer {
+    margin-top: -1.8rem;
+  }
+
+  #intro {
+    margin-bottom: -0.5rem;
+  }
+
+  /* Ensure A4 page fit */
+  @page {
+    size: A4;
+    margin: 0;
+  }
 }
