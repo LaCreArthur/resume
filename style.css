@@ -305,6 +305,7 @@ h2 {
 
   .skill-category {
     font-size: 10pt;
+    color: #4b5563;
   }
 
   .skill-tag {
@@ -348,10 +349,12 @@ h2 {
   .bullet-list {
     page-break-inside: avoid;
     font-size: 8pt;
+    color: #000;
   }
 
   .other-item {
     font-size: 8pt;
+    color: #4b5563;
   }
 
   #footer {
